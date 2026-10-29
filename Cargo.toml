@@ -1,0 +1,28 @@
+[package]
+name = "tug"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Config-driven ship pipeline runner for git and GitHub"
+license = "MIT"
+repository = "https://github.com/allisonhere/tug"
+
+[dependencies]
+anyhow = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+clap = { version = "4", features = ["derive", "env"] }
+crossterm = "0.29"
+dirs = "6"
+ratatui = "0.30"
+regex = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "1"
+unicode-width = "0.2"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+lto = "thin"
+strip = true
